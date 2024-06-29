@@ -80,7 +80,7 @@ function App() {
 
 
 
-    axios(`http://www.omdbapi.com/?apikey=${apiKey}&s=${randomKeyword}`).then(({ data }) => {
+    axios(`https://www.omdbapi.com/?apikey=${apiKey}&s=${randomKeyword}`).then(({ data }) => {
       if (data.Response === "True") {
         let randomMovie = data.Search[Math.floor(Math.random() * data.Search.length)];
         openPopup(randomMovie.imdbID);
@@ -93,7 +93,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Movie Finder</h1>
+        <h1>WatchFlix</h1>
       </header>
       <main>
         <Search handleInput={handleInput} search={search} />
