@@ -19,7 +19,7 @@ function App() {
 
   const search = (e) => {
     if (e.key === "Enter") {
-      axios(`http://www.omdbapi.com/?apikey=${apiKey}&s=${state.s}`).then(({ data }) => {
+      axios(`https://www.omdbapi.com/?apikey=${apiKey}&s=${state.s}`).then(({ data }) => {
         if (data.Response === "True") {
           let results = data.Search;
           setState(prevState => {
@@ -40,7 +40,7 @@ function App() {
   }
 
   const openPopup = id => {
-    axios(`http://www.omdbapi.com/?apikey=${apiKey}&i=${id}`).then(({ data }) => {
+    axios(`https://www.omdbapi.com/?apikey=${apiKey}&i=${id}`).then(({ data }) => {
       if (data.Response === "True") {
         let result = data;
         setState(prevState => {
